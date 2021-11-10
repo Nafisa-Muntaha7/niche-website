@@ -27,6 +27,8 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Purple Wave
                     </Typography>
+                    <NavLink to="/home" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Home</Button></NavLink>
+                    <NavLink to="/explore" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Explore</Button></NavLink>
                     {
                         user?.email ?
                             <Button

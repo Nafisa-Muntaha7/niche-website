@@ -4,6 +4,8 @@ import Login from './Pages/Login/Login/Login';
 import Home from './Pages/Home/Home/Home';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Explore from './Pages/Explore/Explore/Explore';
+import Purchase from './Pages/Purchase/Purchase/Purchase';
 
 function App() {
   return (
@@ -16,6 +18,12 @@ function App() {
             </Route>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/explore">
+              <Explore />
+            </Route>
+            <Route path="/purchase">
+              <Purchase />
             </Route>
             <Route path="/login">
               <Login />
