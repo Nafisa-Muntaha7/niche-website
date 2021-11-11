@@ -1,4 +1,4 @@
-import { Container, Grid, TextField, Typography, Button } from '@mui/material';
+import { Container, Grid, TextField, Typography, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 const Register = () => {
     const [loginData, setLoginData] = useState({});
 
-    const { registerUser } = useAuth();
+    const { user, registerUser, isLoading, authError } = useAuth();
 
     const onChange = e => {
         const field = e.target.name;
@@ -30,7 +30,7 @@ const Register = () => {
                     <Typography variant="h3" gutterBottom>
                         Register
                     </Typography>
-                    <form onSubmit={handleForm}>
+                    {!isLoading && <form onSubmit={handleForm}>
                         <TextField
                             sx={{ width: '50%', m: 2 }}
                             id="standard-basic1"
@@ -64,7 +64,12 @@ const Register = () => {
                                 Already Registered? Please Login
                             </Button>
                         </NavLink>
-                    </form>
+                    </form>}
+                    {isLoading && <CircularProgress color="secondary" />}
+                    {user?.email && <Alert severity="success">Registered successfully!</Alert>
+                    }
+                    {authError && <Alert severity="error">{authError}</Alert>
+                    }
                 </Grid>
             </Grid>
         </Container >

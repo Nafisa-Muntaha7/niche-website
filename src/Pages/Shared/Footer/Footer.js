@@ -1,10 +1,63 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import { Grid, Typography, Container, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+
+const commonStyles = {
+    borderColor: 'text.primary'
+};
 
 const Footer = () => {
     return (
-        <div>
-            <h1>Footer</h1>
-        </div>
+        <Box sx={{ backgroundColor: '#EAE0F9' }}>
+            <Container sx={{ paddingY: 8 }}>
+                <Grid sx={{ ...commonStyles, borderBottom: 1 }} container spacing={3}>
+                    <Grid item xs={12} md={4}>
+                        <Typography sx={{ fontWeight: 500, marginBottom: 3 }} variant="h4">
+                            Follow Us
+                        </Typography>
+                        <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                            CHECK OUT ALL OUR SOCIAL MEDIA CHANNELS BELOW, DON'T MISS OUT ANYTHING.
+                        </Typography>
+                        <Link to="/explore" style={{ textDecoration: 'none' }}>
+                            <Button variant="outlined" sx={{ color: '#5A08CA', margin: 2 }}>Check out all our products</Button>
+                        </Link>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Typography sx={{ fontWeight: 500, marginBottom: 3 }} variant="h4">
+                            Contact Us
+                        </Typography>
+                        <Typography variant="h6">
+                            CUSTOMER SUPPORT
+                        </Typography>
+                        <Typography variant="body1">
+                            HELLO@PURPLEWAVE.COM
+                            <br />
+                            WHOLESALE / RESELLER / GROUP ORDER INQUIRY
+                            <br />
+                            WHOLESALE@PURPLEWAVE.COM
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Typography sx={{ fontWeight: 500, marginBottom: 3 }} variant="h4">
+                            Info
+                        </Typography>
+                        <Typography variant="body1">
+                            PURPLE WAVE
+                            <br />
+                            Registration Number: 563--25-0110
+                            Representative: Wang Jackson
+                        </Typography>
+                        <Typography variant="body1" sx={{ marginTop: 2 }}>
+                            Contact: 82 010 8488 4555
+                            <br />
+                            Address: 68 Ilsan, Republic of Korea
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <footer style={{ marginTop: 10, fontWeight: 500 }}>© 2021 PURPLE WAVE. All Rights Reserved.</footer>
+            </Container>
+        </Box>
     );
 };
 

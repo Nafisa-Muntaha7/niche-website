@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardMedia, Grid } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 const Album = ({ album }) => {
     const { img, name, price, description } = album;
@@ -29,7 +30,9 @@ const Album = ({ album }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button variant="contained" style={{ backgroundColor: '#6D09ED' }}>Buy Now</Button>
+                    <NavLink to="/purchase" style={{ textDecoration: 'none' }}>
+                        <Button variant="contained" style={{ backgroundColor: '#6D09ED' }}>Buy Now</Button>
+                    </NavLink>
                 </CardActions>
             </Card>
         </Grid>
