@@ -31,7 +31,7 @@ const Album = ({ album }) => {
                 </CardContent>
                 <CardActions>
                     <NavLink to="/purchase" style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" style={{ backgroundColor: '#6D09ED' }}>Buy Now</Button>
+                        <Button variant="contained" sx={{ backgroundColor: '#6D09ED', mx: 5 }}>Buy Now</Button>
                     </NavLink>
                 </CardActions>
             </Card>

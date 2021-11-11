@@ -11,7 +11,7 @@ const Albums = () => {
     }, [])
     return (
         <Container>
-            <Grid container spacing={3} sx={{ my: 5 }}>
+            <Grid container spacing={3} sx={{ my: 10 }}>
                 {
                     albums.map(album => <Album
                         key={album._id}

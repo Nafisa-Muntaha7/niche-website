@@ -24,6 +24,8 @@ const Navigation = () => {
                     >
                         <MenuIcon />
                     </IconButton>
+                    {user?.email && <span>Logged in: {user.email}</span>}
+
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Purple Wave
                     </Typography>

@@ -12,7 +12,7 @@ const Product = ({ product }) => {
     const { img, name, price, description } = product;
     return (
         <Grid item xs={12} sm={6} md={6}>
-            <Card sx={{ width: '100%', height: '100%', border: 0, boxShadow: 0 }}>
+            <Card sx={{ width: '100%', height: '100%', border: 0, boxShadow: 0, mb: 4 }}>
                 <CardMedia
                     component="img"
                     style={{ width: 'auto', margin: '0 auto' }}
@@ -26,13 +26,13 @@ const Product = ({ product }) => {
                     <Typography variant="h5" component="div">
                         Price: {price}
                     </Typography>
-                    <Typography sx={{ mb: 1.5 }} >
+                    <Typography sx={{ mb: 1 }} >
                         {description}
                     </Typography>
                 </CardContent>
                 <CardActions>
                     <NavLink to="/purchase" style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" style={{ backgroundColor: '#6D09ED' }}>Purchase</Button>
+                        <Button variant="contained" sx={{ backgroundColor: '#6D09ED', mx: 5 }}>Purchase</Button>
                     </NavLink>
                 </CardActions>
             </Card>
