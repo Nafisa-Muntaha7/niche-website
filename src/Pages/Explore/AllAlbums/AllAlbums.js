@@ -13,11 +13,12 @@ const AllAlbums = () => {
         <Container>
             <Grid container spacing={3} sx={{ my: 5 }}>
                 {
-                    products.map(product => <Product
-                        key={product._id}
-                        product={product}
-                    >
-                    </Product>)
+                    products.map(product =>
+                        <Product
+                            key={product._id}
+                            product={product}
+                        >
+                        </Product>)
                 }
             </Grid>
         </Container>

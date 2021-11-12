@@ -5,16 +5,14 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
+import IconButton from '@mui/material/IconButton'; import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+
 
 const drawerWidth = 240;
 
@@ -30,11 +28,11 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <List sx={{ mt: 5 }}>
+                {['Home', 'Pay', 'My Orders', 'Review', 'Log Out'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                            {index % 1 === 0 && <i class="fas fa-check-circle"></i>}
                         </ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>

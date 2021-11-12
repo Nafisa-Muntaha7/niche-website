@@ -10,6 +10,7 @@ import { NavLink } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { img, name, price, description } = product;
+
     return (
         <Grid item xs={12} sm={6} md={6}>
             <Card sx={{ width: '100%', height: '100%', border: 0, boxShadow: 0, mb: 4 }}>

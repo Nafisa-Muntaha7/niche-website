@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
-import useAuth from './../../../hooks/useAuth'
+import useAuth from './../../../hooks/useAuth';
 
 const Navigation = () => {
     const { user, logout } = useAuth();
