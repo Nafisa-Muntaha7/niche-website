@@ -25,7 +25,6 @@ const Navigation = () => {
                         <MenuIcon />
                     </IconButton>
                     {user?.email && <span>Logged in: {user.email}</span>}
-
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Purple Wave
                     </Typography>
@@ -33,8 +32,10 @@ const Navigation = () => {
                     <NavLink to="/explore" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Explore</Button></NavLink>
                     {
                         user?.email ?
-                            <Button
-                                onClick={logout} color="inherit">Logout</Button>
+                            <Box>
+                                <NavLink to="/dashboard" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Dashboard</Button></NavLink>
+                                <Button onClick={logout} color="inherit">Logout</Button>
+                            </Box>
                             :
                             <NavLink to="/login" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Login</Button></NavLink>
                     }
