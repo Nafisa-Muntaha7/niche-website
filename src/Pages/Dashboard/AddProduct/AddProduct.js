@@ -26,7 +26,7 @@ const AddProduct = () => {
                     <Typography
                         variant="h4"
                         sx={{ mb: 3, fontWeight: 500 }}>
-                        Add a review</Typography>
+                        Add a Product</Typography>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             placeholder="Product name"
