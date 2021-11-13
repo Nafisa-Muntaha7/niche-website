@@ -53,6 +53,11 @@ const Review = () => {
                         This field is required
                     </span>}
                 <br />
+                <input
+                    placeholder="Rating"
+                    style={{ width: '30%', margin: 15, padding: 5 }}
+                    {...register("rating")} />
+                <br />
                 <button
                     style={{ backgroundColor: '#6D09ED' }}
                     className="btn mb-3 text-white">

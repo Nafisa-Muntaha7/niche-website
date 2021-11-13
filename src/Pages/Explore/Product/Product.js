@@ -32,7 +32,7 @@ const Product = ({ product }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <NavLink to={`/purchase/${_id}`} style={{ textDecoration: 'none' }}>
+                    <NavLink to={`/purchase/${_id}`} product={product} style={{ textDecoration: 'none' }}>
                         <Button variant="contained" sx={{ backgroundColor: '#6D09ED', mx: 5 }}>Purchase</Button>
                     </NavLink>
                 </CardActions>

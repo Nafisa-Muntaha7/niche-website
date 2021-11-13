@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container, Grid, Typography } from '@mui/material';
+import Rating from '@mui/material/Rating';
 
 const AllReviews = () => {
     const [reviews, setReviews] = useState([]);
+
     useEffect(() => {
         fetch(`https://young-taiga-95204.herokuapp.com/allReviews`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, []);
 
     return (
         <Container sx={{ my: '10%' }}>
@@ -26,6 +28,10 @@ const AllReviews = () => {
                                 <Typography variant="body1">
                                     {review?.review}
                                 </Typography>
+                                <Rating
+                                    name="read-only"
+                                    value={review?.rating}
+                                    readOnly />
                             </Card>
                         </Grid>
                     ))};

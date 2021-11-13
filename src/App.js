@@ -22,28 +22,28 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/home">
+              <Route exact path="/home">
                 <Home />
               </Route>
-              <Route path="/explore">
+              <Route exact path="/explore">
                 <Explore />
               </Route>
-              <PrivateRoute path="/purchase">
+              <PrivateRoute exact path="/purchase">
                 <Purchase />
               </PrivateRoute>
-              <PrivateRoute path="/purchase/:purchaseId">
+              <PrivateRoute exact path="/purchase/:purchaseId">
                 <Shipping />
               </PrivateRoute>
-              <PrivateRoute path="/place-order">
+              <PrivateRoute exact path="/place-order">
                 <PlaceOrder />
               </PrivateRoute>
-              <PrivateRoute path="/dashboard">
+              <PrivateRoute exact path="/dashboard">
                 <Dashboard />
               </PrivateRoute>
-              <Route path="/login">
+              <Route exact path="/login">
                 <Login />
               </Route>
-              <Route path="/register">
+              <Route exact path="/register">
                 <Register />
               </Route>
             </Switch>

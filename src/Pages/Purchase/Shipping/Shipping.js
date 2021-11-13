@@ -8,14 +8,15 @@ import useAuth from '../../../hooks/useAuth';
 const Shipping = () => {
 
     const { purchaseId } = useParams();
+    console.log(purchaseId);
 
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:7000/purchaseProduct/${purchaseId}`)
+        fetch(`https://young-taiga-95204.herokuapp.com/purchaseProduct/${purchaseId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [purchaseId]);
+    }, []);
     console.log(product)
 
 
@@ -36,7 +37,7 @@ const Shipping = () => {
                         <CardMedia
                             component="img"
                             style={{ width: 'auto', margin: '0 auto' }}
-                            image={product?.img}
+                            src={product?.img}
                             alt="green iguana"
                         />
                         <CardContent>
