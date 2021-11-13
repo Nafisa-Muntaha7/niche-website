@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Product = ({ product }) => {
-    const { img, name, price, description } = product;
+    const { img, name, price, description, _id } = product;
 
     return (
         <Grid item xs={12} sm={6} md={6}>
@@ -32,7 +32,7 @@ const Product = ({ product }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <NavLink to="/purchase" style={{ textDecoration: 'none' }}>
+                    <NavLink to={`/purchase/${_id}`} style={{ textDecoration: 'none' }}>
                         <Button variant="contained" sx={{ backgroundColor: '#6D09ED', mx: 5 }}>Purchase</Button>
                     </NavLink>
                 </CardActions>

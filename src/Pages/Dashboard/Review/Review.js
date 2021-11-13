@@ -6,8 +6,10 @@ import useAuth from '../../../hooks/useAuth';
 const Review = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { user } = useAuth();
+
+
     const onSubmit = data => {
-        fetch(`http://localhost:7000/review`, {
+        fetch(`https://young-taiga-95204.herokuapp.com/review`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -10,7 +10,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import { CartProvider } from 'react-use-cart';
 import PlaceOrder from './Pages/Purchase/PlaceOrder/PlaceOrder';
-import Review from './Pages/Dashboard/Review/Review';
+import Shipping from './Pages/Purchase/Shipping/Shipping';
 
 function App() {
   return (
@@ -31,11 +31,11 @@ function App() {
               <PrivateRoute path="/purchase">
                 <Purchase />
               </PrivateRoute>
+              <PrivateRoute path="/purchase/:purchaseId">
+                <Shipping />
+              </PrivateRoute>
               <PrivateRoute path="/place-order">
                 <PlaceOrder />
-              </PrivateRoute>
-              <PrivateRoute path="/review">
-                <Review />
               </PrivateRoute>
               <PrivateRoute path="/dashboard">
                 <Dashboard />

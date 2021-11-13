@@ -6,12 +6,25 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton'; import List from '@mui/material/List';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { Switch, Route, useRouteMatch, NavLink } from "react-router-dom";
+import Pay from '../Pay/Pay';
+import MyOrders from '../MyOrders/MyOrders';
+import Review from '../Review/Review';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddProduct from '../AddProduct/AddProduct';
+import useAuth from '../../../hooks/useAuth';
+import ManageOrders from '../ManageOrders/ManageOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
+
 
 
 const drawerWidth = 240;
@@ -19,6 +32,10 @@ const drawerWidth = 240;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    let { path, url } = useRouteMatch();
+    const { admin } = useAuth();
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -28,11 +45,39 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <List sx={{ mt: 5 }}>
-                {['Home', 'Pay', 'My Orders', 'Review', 'Log Out'].map((text, index) => (
+            <NavLink to="/home" style={{ textDecoration: 'none', display: 'block' }}>
+                <Button variant="outlined" sx={{ color: '#6D09ED', mt: 3 }}>Home</Button>
+            </NavLink>
+            <NavLink to={`${url}/pay`} style={{ textDecoration: 'none', display: 'block' }}>
+                <Button variant="text" sx={{ color: '#6D09ED', mt: 2 }}>Pay</Button>
+            </NavLink>
+            <NavLink to={`${url}/my-orders`} style={{ textDecoration: 'none', display: 'block' }}>
+                <Button variant="text" sx={{ color: '#6D09ED', mt: 1 }}>My Orders</Button>
+            </NavLink>
+            <NavLink to={`${url}/review`} style={{ textDecoration: 'none', display: 'block' }}>
+                <Button variant="text" sx={{ color: '#6D09ED', mt: 1 }}>Add Review</Button>
+            </NavLink>
+
+            {admin && <Box>
+                <NavLink to={`${url}/make-admin`} style={{ textDecoration: 'none', display: 'block' }}>
+                    <Button variant="text" sx={{ color: '#6D09ED', mt: 1 }}>Make Admin</Button>
+                </NavLink>
+                <NavLink to={`${url}/add-product`} style={{ textDecoration: 'none', display: 'block' }}>
+                    <Button variant="text" sx={{ color: '#6D09ED', mt: 1 }}>Add Product</Button>
+                </NavLink>
+                <NavLink to={`${url}/manage-products`} style={{ textDecoration: 'none', display: 'block' }}>
+                    <Button variant="text" sx={{ color: '#6D09ED', mt: 1 }}>Manage Products</Button>
+                </NavLink>
+                <NavLink to={`${url}/manage-orders`} style={{ textDecoration: 'none', display: 'block' }}>
+                    <Button variant="text" sx={{ color: '#6D09ED', mt: 1 }}>Manage Orders</Button>
+                </NavLink>
+            </Box>}
+
+            <List>
+                {['Inbox', 'Starred', 'Send Email', 'Draft'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>
-                            {index % 1 === 0 && <i class="fas fa-check-circle"></i>}
+                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                         </ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -105,8 +150,36 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
+
+                <Switch>
+                    <Route exact path={path}>
+                        <h3>Please select a topic.</h3>
+                    </Route>
+                    <Route path={`${path}/pay`}>
+                        <Pay />
+                    </Route>
+                    <Route path={`${path}/my-orders`}>
+                        <MyOrders />
+                    </Route>
+                    <Route path={`${path}/review`}>
+                        <Review />
+                    </Route>
+                    <Route path={`${path}/make-admin`}>
+                        <MakeAdmin />
+                    </Route>
+                    <Route path={`${path}/add-product`}>
+                        <AddProduct />
+                    </Route>
+                    <Route path={`${path}/manage-products`}>
+                        <ManageProducts />
+                    </Route>
+                    <Route path={`${path}/manage-orders`}>
+                        <ManageOrders />
+                    </Route>
+                </Switch>
+
                 <Typography paragraph>
-                    .....
+
                 </Typography>
             </Box>
         </Box>
