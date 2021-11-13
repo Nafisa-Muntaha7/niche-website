@@ -15,7 +15,7 @@ const Shipping = () => {
         fetch(`http://localhost:7000/purchaseProduct/${purchaseId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, []);
+    }, [purchaseId]);
     console.log(product)
 
 
@@ -57,14 +57,14 @@ const Shipping = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             placeholder="Name"
-                            style={{ width: '30%' }}
+                            style={{ width: '30%', padding: 5 }}
                             defaultValue={user.displayName}
                             {...register("name")} />
                         <br />
                         <input
                             placeholder="Email"
                             defaultValue={user.email}
-                            style={{ width: '30%', margin: 15 }}
+                            style={{ width: '30%', margin: 15, padding: 5 }}
                             {...register("email", { required: true })} />
                         {errors.email &&
                             <span className="text-danger">
@@ -73,13 +73,13 @@ const Shipping = () => {
                         <br />
                         <input
                             placeholder="Address"
-                            style={{ width: '30%' }}
+                            style={{ width: '30%', padding: 5 }}
                             {...register("address", { required: true })} />
                         <br />
                         <input
                             placeholder="Phone"
                             defaultValue=""
-                            style={{ width: '30%', margin: 15 }}
+                            style={{ width: '30%', margin: 15, padding: 5 }}
                             {...register("phone", { required: true })} />
                         <br />
                         <button

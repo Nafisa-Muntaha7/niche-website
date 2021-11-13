@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const AddedProduct = () => {
     const [addProducts, setAddProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:7000/allProducts`)
+        fetch(`https://young-taiga-95204.herokuapp.com/allProducts`)
             .then(res => res.json())
             .then(data => setAddProducts(data))
     }, [])
@@ -21,7 +21,7 @@ const AddedProduct = () => {
                                 <CardMedia
                                     component="img"
                                     style={{ width: 'auto', margin: '0 auto' }}
-                                    image={addProduct?.img}
+                                    image={addProduct?.image}
                                     alt="green iguana"
                                 />
                                 <CardContent>

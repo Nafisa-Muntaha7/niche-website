@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        fetch(`http://localhost:7000/addProducts`, {
+        fetch(`https://young-taiga-95204.herokuapp.com/addProducts`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
