@@ -32,7 +32,7 @@ function App() {
                 <Purchase />
               </PrivateRoute>
               <PrivateRoute exact path="/purchase/:purchaseId">
-                <Shipping />
+                <Purchase />
               </PrivateRoute>
               <PrivateRoute path="/place-order">
                 <PlaceOrder />

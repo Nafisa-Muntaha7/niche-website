@@ -5,11 +5,11 @@ import Shipping from '../Shipping/Shipping';
 
 const Purchase = () => {
     return (
-        <>
+        <div>
             <Navigation />
             <Shipping />
             <Footer />
-        </>
+        </div>
     );
 };
 
