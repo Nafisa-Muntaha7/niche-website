@@ -31,13 +31,13 @@ const Review = () => {
                 <input
                     placeholder="Name"
                     defaultValue={user.displayName}
-                    style={{ width: '30%', margin: 15 }}
+                    style={{ width: '30%', margin: 15, padding: 5 }}
                     {...register("name")} />
                 <br />
                 <input
                     placeholder="Email"
                     defaultValue={user.email}
-                    style={{ width: '30%' }}
+                    style={{ width: '30%', padding: 5 }}
                     {...register("email", { required: true })} />
                 {errors.email &&
                     <span className="text-danger">
@@ -46,7 +46,7 @@ const Review = () => {
                 <br />
                 <input
                     placeholder="Review"
-                    style={{ width: '30%', margin: 15 }}
+                    style={{ width: '30%', margin: 15, padding: 5 }}
                     {...register("review", { required: true })} />
                 {errors.email &&
                     <span className="text-danger">

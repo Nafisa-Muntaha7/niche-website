@@ -9,7 +9,6 @@ const AllReviews = () => {
             .then(data => setReviews(data))
     }, [])
 
-
     return (
         <Container sx={{ my: '10%' }}>
             <Typography variant="h3" sx={{ mb: 5, fontWeight: 500 }}> Reviews </Typography>
@@ -30,8 +29,6 @@ const AllReviews = () => {
                             </Card>
                         </Grid>
                     ))};
-
-
             </Grid>
         </Container>
     );
