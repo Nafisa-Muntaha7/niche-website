@@ -6,10 +6,8 @@ import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 
 const Shipping = () => {
-
     const { purchaseId } = useParams();
     console.log(purchaseId);
-
     const [product, setProduct] = useState({});
 
     useEffect(() => {
@@ -55,6 +53,9 @@ const Shipping = () => {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={6}>
+                    <Typography variant="h4">
+                        Place Order
+                    </Typography>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             placeholder="Name"
